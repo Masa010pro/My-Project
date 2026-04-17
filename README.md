@@ -1,57 +1,42 @@
-# LAN-Based E-Commerce System
+<h1 align="center">LAN-Based E-Commerce System</h1>
 
-## Overview
-
-This is a LAN-based e-commerce system designed to enable buying and selling within a local community without requiring internet access.
-The system runs on a local server and allows users connected to the same network to access and interact with products.
-
----
-
-## Features
-
-* Product listing and display
-* Local server (LAN) access
-* Basic shopping workflow
-* MySQL database integration for storing products and data
-* Web-based interface for users
+![HTML](https://img.shields.io/badge/HTML-HTML5-orange)
+![CSS](https://img.shields.io/badge/CSS-3-blue)
+![JavaScript](https://img.shields.io/badge/JS-JavaScript-yellow)
+![MySQL](https://img.shields.io/badge/MySQL-Database-blue)
 
 ---
 
-## Technologies Used
-
-* HTML
-* CSS
-* JavaScript
-* MySQL
-* Local server environment (XAMPP or similar)
+## 🚀 Overview
+A local network-based e-commerce system allowing users to browse and interact with products without internet access.
 
 ---
 
-## How It Works
-
-1. The system runs on a local server within a LAN environment
-2. Users connect through a browser using the server IP address
-3. The frontend (HTML/CSS/JS) handles user interaction
-4. MySQL database stores and retrieves product data
-
----
-
-## Project Purpose
-
-This project explores how e-commerce systems can operate in environments with limited or no internet access by using a local network-based approach.
+## 🛠 Features
+- 📡 LAN-based access system  
+- 🛒 Product listing and browsing  
+- 💾 MySQL database integration  
+- 🌐 Web-based interface  
 
 ---
 
-## Future Improvements
-
-* User authentication system
-* Admin dashboard for product management
-* Improved UI/UX design
-* Order tracking system
-* Enhanced security for database access
+## ⚙️ Tech Stack
+- HTML  
+- CSS  
+- JavaScript  
+- MySQL  
 
 ---
 
-## Author
+## 📸 Screenshots
+(Add your project images here)
+
+---
+
+## 🎯 Purpose
+Built to explore offline e-commerce solutions for low-connectivity environments.
+
+---
+
+## 👨‍💻 Author
 Software Engineering Student
-Focused on web development, networking systems, and real-world software solutions.
