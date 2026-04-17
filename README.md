@@ -1,11 +1,9 @@
 <p align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?size=20&center=true&vCenter=true&width=500&color=333333&lines=Software+Engineer;Android+Developer;Web+Developer;Network+Systems+Builder" />
+  <h1 style="color:#E65100; font-size:38px;">LAN-Based E-Commerce System</h1>
 </p>
 
----
-
 <p align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?size=28&center=true&vCenter=true&width=700&color=0D47A1&lines=LAN-Based+E-Commerce+System" />
+  <img src="https://readme-typing-svg.herokuapp.com?size=20&center=true&vCenter=true&width=500&color=333333&lines=Software+Engineer;Android+Developer;Web+Developer;Network+Systems+Builder" />
 </p>
 
 ---
