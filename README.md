@@ -15,7 +15,7 @@ A local network-based e-commerce platform enabling product browsing and interact
 
 ## 🛠 Features
 - 📡 LAN-based access system  
-- 🛒 Product listing and browsing  
+- 🛒 Product listing, browsing and delivery  
 - 💾 MySQL database integration  
 - 🌐 Web-based interface using HTML, CSS, JavaScript  
 
