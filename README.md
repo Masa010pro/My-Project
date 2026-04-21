@@ -1,6 +1,4 @@
-<p align="center">
-  <h1 style="color:#E65100; font-size:38px;">LAN-Based E-Commerce System</h1>
-</p>
+<h1 align="center">LAN-Based E-Commerce System</h1>
 
 <p align="center">
   <img src="https://readme-typing-svg.herokuapp.com?size=20&center=true&vCenter=true&width=500&color=333333&lines=Software+Engineer;Android+Developer;Web+Developer;Network+Systems+Builder" />
@@ -9,15 +7,26 @@
 ---
 
 ## 🚀 Overview
-A local network-based e-commerce platform enabling product browsing and interaction without internet access. The system runs on a local server and is accessible within a LAN environment.
+This is a local network-based e-commerce system built to simulate a real online shopping experience without requiring internet access. It runs on a local server and allows users within the same LAN to browse products, place orders, and interact with a simple shopping interface.
+
+The system is designed for environments where internet access is limited or unavailable, such as schools, offices, or internal business networks. It focuses on providing a lightweight and functional shopping platform that operates entirely within a closed network.
 
 ---
 
 ## 🛠 Features
-- 📡 LAN-based access system  
-- 🛒 Product listing, browsing and delivery  
-- 💾 MySQL database integration  
-- 🌐 Web-based interface using HTML, CSS, JavaScript  
+- 📡 Works entirely over a Local Area Network (LAN)  
+- 🛒 Product browsing and search functionality  
+- 🧾 Basic order placement system  
+- 💾 MySQL database for storing products and orders  
+- 🌐 Simple and responsive web interface using HTML, CSS, and JavaScript  
+
+---
+
+## 🏗 System Architecture
+- **Client:** Web browser (any device connected to the LAN)  
+- **Server:** Apache (XAMPP/WAMP local server)  
+- **Database:** MySQL  
+- **Communication:** HTTP requests over local network  
 
 ---
 
@@ -33,27 +42,28 @@ A local network-based e-commerce platform enabling product browsing and interact
 ---
 
 ## 🎯 Purpose
-Designed to explore offline e-commerce solutions for environments with limited or no internet connectivity.
-
----
-
-## 📥 Setup Instructions
-1. Clone the repository  
-2. Place files in your local server directory (e.g. XAMPP `htdocs`)  
-3. Import the MySQL database  
-4. Start Apache and MySQL  
-5. Access via `localhost` or local IP address  
+The goal of this project is to explore how e-commerce systems can function in offline or restricted network environments while still maintaining core shopping features like product listing and ordering.
 
 ---
 
 ## 🔮 Future Improvements
-- User authentication system  
-- Admin dashboard  
+- User login and authentication system  
+- Admin dashboard for managing products and orders  
 - Improved UI/UX design  
-- Order tracking system  
+- Order tracking and status updates  
+- Better security controls for user sessions  
+
+---
+
+## 🔐 Security Notes
+- System operates within a closed LAN environment  
+- No external internet exposure required  
+- Future versions will include stronger authentication and access control  
 
 ---
 
 ## 👨‍💻 Author
-Software Engineering Student  
-Focused on Android development, web systems, and network-based solutions.
+Software Engineering student with interests in:
+- Android development (Java/Kotlin)  
+- Web development  
+- Network-based systems and applications
