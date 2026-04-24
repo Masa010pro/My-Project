@@ -1,132 +1,77 @@
-# LAN E-Commerce System
+<h1 align="center">LAN-Based E-Commerce System</h1>
 
-A complete offline LAN-based e-commerce web system built with Flask.
+<p align="center">
+  <img src="https://readme-typing-svg.herokuapp.com?size=20&center=true&vCenter=true&width=500&color=333333&lines=Software+Engineer;Android+Developer;Web+Developer;Network+Systems+Builder" />
+</p>
 
-## Features
+---
 
-- **User Management**: Registration, login, role-based access (Admin, Seller, Buyer)
-- **Product Management**: Add, edit, delete products with image upload
-- **Categories**: Organize products by categories (admin-managed)
-- **Shopping Cart**: Add products, update quantities, remove items
-- **Order System**: Place orders, track order status
-- **Seller Dashboard**: Manage products, view and update orders
-- **Admin Dashboard**: Manage categories and users
-- **Messaging System**: Send messages between users
-- **Search**: Real-time product search
+## 🚀 Overview
+This is a local network-based e-commerce system built to simulate a real online shopping experience without requiring internet access. It runs on a local server and allows users within the same LAN to browse products, place orders, and interact with a simple shopping interface.
 
-## Quick Start
+The system is designed for environments where internet access is limited or unavailable, such as schools, offices, or internal business networks. It focuses on providing a lightweight and functional shopping platform that operates entirely within a closed network.
 
-### 1. Install Dependencies
+---
 
-```bash
-pip install -r requirements.txt
-```
+## 🛠 Features
+- 📡 Works entirely over a Local Area Network (LAN)  
+- 🛒 Product browsing and search functionality  
+- 🧾 Basic order placement system  
+- 💾 MySQL database for storing products and orders  
+- 🌐 Simple and responsive web interface using HTML, CSS, and JavaScript  
 
-### 2. Run the Application
+---
 
-```bash
-python run.py
-```
+## 🏗 System Architecture
+- **Client:** Web browser (any device connected to the LAN)  
+- **Server:** Apache (XAMPP/WAMP local server)  
+- **Database:** MySQL  
+- **Communication:** HTTP requests over local network  
 
-### 3. Access the Application
+---
 
-- **Local**: http://localhost:5000
-- **LAN**: http://YOUR_IP_ADDRESS:5000
+## ⚙️ Tech Stack
 
-### 4. Default Admin Account
+<p align="left">
+  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" />
+  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" />
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" />
+  <img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white" />
+</p>
 
-- Username: `admin`
-- Password: `admin123`
+---
 
-## Folder Structure
+## 🎯 Purpose
+The goal of this project is to explore how e-commerce systems can function in offline or restricted network environments while still maintaining core shopping features like product listing and ordering.
 
-```
-lan_ecommerce/
-├── app/
-│   ├── __init__.py         # Flask app initialization
-│   ├── models.py           # Database models
-│   ├── routes.py           # Application routes
-│   ├── templates/          # HTML templates
-│   │   ├── base.html
-│   │   ├── index.html
-│   │   ├── login.html
-│   │   ├── register.html
-│   │   ├── product.html
-│   │   ├── category.html
-│   │   ├── cart.html
-│   │   ├── checkout.html
-│   │   ├── orders.html
-│   │   ├── order_detail.html
-│   │   ├── seller_products.html
-│   │   ├── seller_add_product.html
-│   │   ├── seller_edit_product.html
-│   │   ├── seller_orders.html
-│   │   ├── admin_categories.html
-│   │   ├── admin_users.html
-│   │   ├── messages.html
-│   │   └── read_message.html
-│   └── static/
-│       ├── css/
-│       │   └── style.css
-│       ├── js/
-│       │   └── main.js
-│       ├── images/
-│       │   └── default.jpg
-│       └── uploads/       # Product images directory
-├── run.py                 # Application entry point
-├── requirements.txt       # Python dependencies
-└── README.md             # This file
-```
+---
 
-## How to Use
+## 🔮 Future Improvements
+- User login and authentication system  
+- Admin dashboard for managing products and orders  
+- Improved UI/UX design  
+- Order tracking and status updates  
+- Better security controls for user sessions  
 
-### For Buyers
+---
 
-1. Register a new account
-2. Browse products on the homepage
-3. Click on a product to view details
-4. Add products to cart
-5. Proceed to checkout
-6. View order history
+## 🔐 Security Notes
+- System operates within a closed LAN environment  
+- No external internet exposure required  
+- Future versions will include stronger authentication and access control  
 
-### For Sellers
+---
 
-1. Register and check "Register as Seller" (or ask admin to enable)
-2. Go to Seller Panel → Add Product
-3. Fill in product details and upload an image
-4. Manage your products from Seller Panel → My Products
-5. View and update order statuses
+## 👨‍💻 Author
+Software Engineering student with interests in:
+- Android development (Java/Kotlin)  
+- Web development  
+- Network-based systems and applications
 
-### For Admins
+## 🔧 Contributors
+- Masa010pro
 
-1. Login with admin account (default: admin/admin123)
-2. Access Admin panel from the navbar
-3. Manage categories and users
-4. Toggle seller status for users
 
-## Network Access
-
-To make this accessible on your LAN:
-
-1. Run `python run.py`
-2. The application will show your local IP address
-3. Other devices on the same network can access via http://YOUR_IP:5000
-4. All devices will share the same SQLite database
-
-## Technology Stack
-
-- **Backend**: Flask (Python)
-- **Database**: SQLite (SQLAlchemy)
-- **Authentication**: Flask-Login
-- **Password Hashing**: Flask-Bcrypt
-- **Frontend**: Bootstrap 5, Custom CSS, Vanilla JavaScript
-
-## Database
-
-The SQLite database (`ecommerce.db`) is created automatically on first run.
-
-## Security Notes
-
-- Change the SECRET_KEY in `app/__init__.py` for production
-- This is for LAN/offline use - not intended for internet exposure
-- User passwords are hashed using bcrypt
+## 🔧 Contributors
+- Masa010pro
+- OpenHands (AI Assistant)
