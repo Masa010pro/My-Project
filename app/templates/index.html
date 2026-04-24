@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+{% block title %}LAN Commerce - Home{% endblock %}
+{% block content %}
+<div class="hero bg-light p-5 mb-4 rounded">
+    <div class="container">
+        <h1 class="display-4">Welcome to LAN Commerce</h1>
+        <p class="lead">Your offline local network e-commerce solution</p>
+        <div class="mt-3">
+            <input type="text" class="form-control" id="searchInput" placeholder="Search products...">
+            <div id="searchResults" class="list-group mt-2"></div>
+        </div>
+    </div>
+</div>
+
+<h2 class="mb-4">Featured Products</h2>
+<div class="row">
+    {% for product in products %}
+    <div class="col-md-3 mb-4">
+        <div class="card h-100 product-card">
+            {% if product.image and product.image != 'default.jpg' %}
+            <img src="{{ url_for('static', filename='uploads/' + product.image) }}" class="card-img-top" alt="{{ product.name }}">
+            {% else %}
+            <img src="{{ url_for('static', filename='images/default.jpg') }}" class="card-img-top" alt="{{ product.name }}">
+            {% endif %}
+            <div class="card-body">
+                <h5 class="card-title">{{ product.name }}</h5>
+                <p class="card-text text-muted">{{ product.category.name }}</p>
+                <p class="card-text"><strong class="text-success">${{ "%.2f"|format(product.price) }}</strong></p>
+                <p class="card-text"><small class="text-muted">Stock: {{ product.stock }}</small></p>
+            </div>
+            <div class="card-footer bg-white border-top-0">
+                <a href="{{ url_for('product_detail', product_id=product.id) }}" class="btn btn-primary btn-sm w-100">View Details</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% if not products %}
+<div class="alert alert-info">
+    No products available yet. <a href="{{ url_for('register') }}">Register</a> as a seller to add products!
+</div>
+{% endif %}
+
+<h2 class="mt-5 mb-4">Categories</h2>
+<div class="row">
+    {% for category in categories %}
+    <div class="col-md-2 mb-3">
+        <a href="{{ url_for('category_products', category_id=category.id) }}" class="text-decoration-none">
+            <div class="card text-center h-100">
+                <div class="card-body">
+                    <i class="bi bi-folder display-4 text-primary"></i>
+                    <h6 class="mt-2">{{ category.name }}</h6>
+                </div>
+            </div>
+        </a>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+document.getElementById('searchInput').addEventListener('input', function(e) {
+    const query = e.target.value;
+    if (query.length < 2) {
+        document.getElementById('searchResults').innerHTML = '';
+        return;
+    }
+    fetch('/search?q=' + encodeURIComponent(query))
+        .then(res => res.json())
+        .then(data => {
+            let html = '';
+            data.forEach(p => {
+                html += `<a href="/product/${p.id}" class="list-group-item list-group-item-action">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h6 class="mb-1">${p.name}</h6>
+                        <small>$${p.price.toFixed(2)}</small>
+                    </div>
+                </a>`;
+            });
+            document.getElementById('searchResults').innerHTML = html;
+        });
+});
+</script>
+{% endblock %}

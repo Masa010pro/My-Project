@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+{% block title %}Messages - LAN Commerce{% endblock %}
+{% block content %}
+<h2 class="mb-4"><i class="bi bi-envelope"></i> Messages</h2>
+
+<div class="row">
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-header bg-primary text-white">
+                <h5 class="mb-0">Send Message</h5>
+            </div>
+            <div class="card-body">
+                <form method="POST" action="{{ url_for('send_message') }}">
+                    <div class="mb-3">
+                        <label for="recipient_id" class="form-label">To</label>
+                        <select class="form-select" id="recipient_id" name="recipient_id" required>
+                            {% for user in users %}
+                            <option value="{{ user.id }}">{{ user.username }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="subject" class="form-label">Subject</label>
+                        <input type="text" class="form-control" id="subject" name="subject" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="content" class="form-label">Message</label>
+                        <textarea class="form-control" id="content" name="content" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100"><i class="bi bi-send"></i> Send</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-8">
+        <ul class="nav nav-tabs" role="tablist">
+            <li class="nav-item">
+                <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#received">Received</button>
+            </li>
+            <li class="nav-item">
+                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#sent">Sent</button>
+            </li>
+        </ul>
+        
+        <div class="tab-content mt-3">
+            <div class="tab-pane fade show active" id="received">
+                {% if received %}
+                <div class="list-group">
+                    {% for message in received %}
+                    <a href="{{ url_for('read_message', message_id=message.id) }}" class="list-group-item list-group-item-action {% if not message.is_read %}fw-bold{% endif %}">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h6 class="mb-1">{{ message.subject }}</h6>
+                            <small>{{ message.created_at.strftime('%Y-%m-%d %H:%M') }}</small>
+                        </div>
+                        <p class="mb-1">From: {{ message.sender.username }}</p>
+                        {% if not message.is_read %}
+                        <span class="badge bg-primary">New</span>
+                        {% endif %}
+                    </a>
+                    {% endfor %}
+                </div>
+                {% else %}
+                <div class="alert alert-info">No received messages.</div>
+                {% endif %}
+            </div>
+            
+            <div class="tab-pane fade" id="sent">
+                {% if sent %}
+                <div class="list-group">
+                    {% for message in sent %}
+                    <a href="{{ url_for('read_message', message_id=message.id) }}" class="list-group-item list-group-item-action">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h6 class="mb-1">{{ message.subject }}</h6>
+                            <small>{{ message.created_at.strftime('%Y-%m-%d %H:%M') }}</small>
+                        </div>
+                        <p class="mb-1">To: {{ message.recipient.username }}</p>
+                    </a>
+                    {% endfor %}
+                </div>
+                {% else %}
+                <div class="alert alert-info">No sent messages.</div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
