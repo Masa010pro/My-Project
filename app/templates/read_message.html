@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}{{ message.subject }} - LAN Commerce{% endblock %}
+{% block content %}
+<div class="row">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0">{{ message.subject }}</h5>
+                <small class="text-muted">
+                    {% if message.sender_id == current_user.id %}
+                    To: {{ message.recipient.username }}
+                    {% else %}
+                    From: {{ message.sender.username }}
+                    {% endif %}
+                    | {{ message.created_at.strftime('%Y-%m-%d %H:%M') }}
+                </small>
+            </div>
+            <div class="card-body">
+                <p>{{ message.content }}</p>
+            </div>
+            <div class="card-footer">
+                <a href="{{ url_for('messages') }}" class="btn btn-outline-secondary">Back to Messages</a>
+                {% if message.recipient_id == current_user.id or message.sender_id == current_user.id %}
+                <a href="{{ url_for('delete_message', message_id=message.id) }}" class="btn btn-danger" onclick="return confirm('Delete this message?')">Delete</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
